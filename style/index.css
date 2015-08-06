@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* all-state */ 
+html {overflow-y:scroll;}
+body {margin:0; padding:0; font-size:12px;}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote,p{padding:0; margin:0;}
+table,td,tr,th{font-size:12px;border:0px;}
+img{ border:none;}
+li{list-style-type:none;}
+ol,ul {list-style:none;}
+h3,h4,h5,h6{font-size:14px; font-weight:normal;}
+address,cite,code,em,th {font-weight:normal; font-style:normal;}
+a:link {
+	color: #000;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #000;
+}
+a:hover {
+	color:#F00;
+}
+*{
+	padding:0;
+	margin:0;}
+.left{
+	float:left;}
+.right{
+	float:right;}
+.clear{
+	clear:both;}
+.red{
+	color:#E50000;}
+.auto{
+	margin:0 auto;}
+.m10{
+	margin-top:10px;}
+.w960{
+	width:960px;}
+.w480{
+	width:475px;}
+.w1300{
+	width: 1300px;
+}
+.border{
+	border: 1px solid red;
+}
+
+.pic_box{
+	width: 300px;
+	height: 400px;
+	float: left;
+	margin-left: 20px;
+	text-align: center;
+}
+.pic_box span{
+	height: 100%;
+	display: inline-block;
+	vertical-align:middle;
+	
+}
+.pic_box img{
+	vertical-align:middle;
+	width:250px;
+}
+.hidden{
+	width: 300px;
+	height: 300px;
+	overflow: hidden;
+}
+#top{
+	height: 100px;
+}
+#middle{
+	height: 900px;
+}
