@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <title>无标题文档</title>
-<link href="style/index.css" type="text/css" rel="stylesheet" >
-<script src="js/jquery.js"></script>
+<link href="/style/index.css" type="text/css" rel="stylesheet" >
+<script src="/js/jquery.js"></script>
 <script>
 $(document).ready(function(){
 
@@ -65,6 +65,9 @@ $(document).ready(function(){
 		
 	</div>
 
-
+<div class="fixed">
+	<div id="upload"><a href="" >上传图片</a></div>
+	<div id="biao"><a href="" >统计图表</a></div>
+</div>
 </body>
 </html>
