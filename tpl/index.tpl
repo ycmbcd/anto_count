@@ -10,19 +10,29 @@
 // 弹窗
 $(document).ready(function(){
 	$("#up").click(function(){
-		$("#warning_text").html("请选择你要上传的图片")
+		//$("#warning_text").html("请选择你要上传的图片")
 		$("#warning_box").fadeIn(0);
 		$("#shade").fadeIn(0);				
 	})				
 	$("#anto_no").click(function(){
 		$("#warning_box").fadeOut(0);
 		$("#shade").fadeOut(0);
-		$("#yes").attr("name","")
-		
 	})				
 })
+function cancel(){
+	$("#warning_box").fadeOut(0);
+	$("#shade").fadeOut(0);
+}
 function anto_upload(){
-	alert("111")
+	var ss=$("#this_theme").val();
+	var yy=$("#file").val();
+	if(ss==""){
+		alert("请选择你要参赛的主题！")
+	}else if(yy==""){
+		alert("请选择你要上传的文件！")
+	}else{
+		$("#up_pic").submit()
+	}
 }
 function change_theme(){
 	var c_theme=$("#c_theme").val();
@@ -33,18 +43,17 @@ function change_theme(){
 </head>
 
 <!--弹窗效果-->					
-<form action="#" method="post" enctype="multipart/form-data">
+<form id="up_pic" action="/index.php" method="post" enctype="multipart/form-data">
 <div id="warning_box">
-	<div style="margin:20px 0 0 40px;">您要参赛的主题：<input id="this_theme" readonly style="border:none;background:lightyellow; font-size:16px;" type="text" value="" /></div>
-	<div id="warning_text"></div>
+	<div style="margin:20px 0 0 40px;font-size:14px;">您要参赛的主题：<input id="this_theme" name="this_theme" readonly style="border:none;background:lightyellow;font-size:20px;color:#C00;" type="text" value="" /></div>
 	<input id="file"  type="file" name="uimg" style="height:30px;" >
 	<div>
     <div id="anto_yes" class="btn_green" onclick="anto_upload()" >上 传</div>
-    <div id="anto_no" class="btn_green" >取 消</div>
+    <div id="anto_no" class="btn_red" >取 消</div>
 	</div>
 </div>
 </form>
-<div id="shade"></div>
+<div id="shade" onClick="cancel()"></div>
 <!--/弹窗效果-->
 
 <body style="background:#464646;">

@@ -93,6 +93,7 @@ a:hover {
 	margin-left:-225px;
 	display: none;
 	z-index: 2;
+	border:8px solid #E5E0BF;
 }
 #shade{
 	width: 100%;
@@ -117,11 +118,11 @@ a:hover {
 }
 #anto_yes{
 	float: left;
-	margin-left:70px;
+	margin-left:100px;
 }
 #anto_no{
 	float: right;
-	margin-right:70px;
+	margin-right:100px;
 }
 #warning_box div{
 	width:450px;		    	
@@ -132,8 +133,11 @@ a:hover {
 	text-align:center;
 }
 #file{
-	width: 200px;
-	margin-left:125px;
+	margin-top:40px;
+	font-size:20px;
+	margin-bottom:50px;
+	width: 300px;
+	margin-left:100px;
 }	
 /*弹窗效果*/
 .btn_green,.btn_red,.btn_blue{
