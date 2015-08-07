@@ -17,9 +17,11 @@ $(document).ready(function(){
 	$("#anto_no").click(function(){
 		$("#warning_box").fadeOut(0);
 		$("#shade").fadeOut(0);
-		$("#yes").attr("name","")
-		
-	})				
+		$("#yes").attr("name","")		
+	})
+	
+	pic_big();
+				
 })
 function anto_upload(){
 	alert("111")
@@ -27,6 +29,25 @@ function anto_upload(){
 function change_theme(){
 	var c_theme=$("#c_theme").val();
 	$("#this_theme").val(c_theme);
+}
+function pic_big(){
+	$("#middle img").each(function(){
+		$(this).click(function(){
+			var href = $(this).attr("src");
+			$("#shade2").fadeIn(0);
+			$("#pics img").attr("src",href);
+			$("#pics").fadeIn(200);
+		})
+	});
+
+	$("#shade2").click(function(){
+		$("#shade2").fadeOut(0);
+		$("#pics").fadeOut(200);
+	})
+	$("#pics").click(function(){
+		$("#shade2").fadeOut(0);
+		$("#pics").fadeOut(200);
+	})
 }
 </script>
 {/literal}
@@ -45,6 +66,8 @@ function change_theme(){
 </div>
 </form>
 <div id="shade"></div>
+<div id="shade2"></div>
+<div id="pics"><img src=""></div>
 <!--/弹窗效果-->
 
 <body style="background:#464646;">
