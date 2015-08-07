@@ -47,7 +47,12 @@ function pic_big(){
 			$("#shade2").fadeIn(0);
 			$("#pics img").attr("src",href);
 			$("#pics").fadeIn(200);
-		})
+
+			var top = $(document).scrollTop();
+			var top = top+120;
+			$("#pics").css({"top":top+"px"})
+		});
+
 	});
 
 	$("#shade2").click(function(){
