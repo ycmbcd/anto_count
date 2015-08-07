@@ -38,7 +38,7 @@ function anto_upload(){
 }
 function change_theme(){
 	var c_theme=$("#c_theme").val();
-	$("#this_theme").val(c_theme);
+	location.href="index.php?change_theme="+c_theme;
 }
 function pic_big(){
 	$("#middle img").each(function(){
@@ -71,7 +71,7 @@ function pic_big(){
 <!--弹窗效果-->					
 <form id="up_pic" action="/index.php" method="post" enctype="multipart/form-data">
 <div id="warning_box">
-	<div style="margin:20px 0 0 40px;font-size:14px;">您要参赛的主题：<input id="this_theme" name="this_theme" readonly style="border:none;background:lightyellow;font-size:20px;color:#C00;" type="text" value="" /></div>
+	<div style="margin:20px 0 0 40px;font-size:14px;">您要参赛的主题：<input id="this_theme" name="this_theme" readonly style="border:none;background:lightyellow;font-size:20px;color:#C00;" type="text" value="{$key_theme}" /></div>
 	<input id="file"  type="file" name="uimg" style="height:30px;" >
 	<div>
     <div id="anto_yes" class="btn_green" onclick="anto_upload()" >上 传</div>
@@ -87,8 +87,9 @@ function pic_big(){
 <body style="background:#464646;">
 
 	<div class="auto w1300" id="top">
+    <div id="key_theme">{$key_theme}</div>
     <div class="auto w1300">
-    	 <select id="c_theme" onChange="change_theme()" style="width:200px;">
+    	 <select id="c_theme" onChange="change_theme()" style="width:200px; opacity:0;">
         	<option value="0">请选择投票主题...</option> 
         	{foreach $resu as $se}
             <option value="{$se.theme}">{$se.theme}</option>
@@ -106,7 +107,7 @@ function pic_big(){
 			<div class="hidden">
 				<span></span><img src="/uploads/{$se.c_pic}" />
 			</div>
-			<div class="ding m10">顶！</div>
+			<div class="ding m10">{$se.c_num}</div>
 		</div>
 	{/foreach}	
 	</div>

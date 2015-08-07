@@ -6,11 +6,20 @@
 		$sql = "select * from c_theme order by id desc;";
 		$res = $db->execute($sql);
 		$smarty->assign("resu",$res);
+		$smarty->assign("key_theme","请选择投票主题...");
 	//查询作品
 		$db = new DB();
 		$sql = "select * from c_uploads order by id desc;";
 		$res = $db->execute($sql);
 		$smarty->assign("pic_cool",$res);
+	if(isset($_GET['change_theme'])){
+		$c_theme=$_GET['change_theme'];
+		$db = new DB();
+		$sql = "select * from c_uploads where c_theme='{$c_theme}' order by id desc;";
+		$res = $db->execute($sql);
+		$smarty->assign("pic_cool",$res);
+		$smarty->assign("key_theme",$c_theme);
+	}
 	//参赛
 	if(isset($_POST['this_theme'])){
 		$this_theme = $_POST['this_theme'];
