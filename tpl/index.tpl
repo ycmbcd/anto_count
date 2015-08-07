@@ -96,49 +96,14 @@ function pic_big(){
         <div class="clear"></div>
 	</div>
 	<div class="auto w1300" style="margin-top:200px;" id="middle">
+    {foreach $pic_cool as $se}
 		<div class="pic_box">
 			<div class="hidden">
-				<span></span><img src="http://shopping.geocities.jp/igtx/images/new/wx1_3_1.jpg" />
+				<span></span><img src="/uploads/{$se.c_pic}" />
 			</div>
 			<div class="ding m10">顶！</div>
 		</div>
-		<div class="pic_box">
-			<div class="hidden">
-				<span></span><img src="http://shopping.geocities.jp/igtx/images/new/ab_3.png" />
-			</div>
-			<div class="ding m10">顶！</div>
-		</div>
-		<div class="pic_box">
-			<div class="hidden">
-				<span></span><img src="http://shopping.geocities.jp/igtx/images/new/wx1_3_1.jpg" />
-			</div>
-			<div class="ding m10">顶！</div>
-		</div>
-		<div class="pic_box">
-			<div class="hidden">
-				<span></span><img src="http://shopping.geocities.jp/igtx/images/new/ab_1.png" />
-			</div>
-			<div class="ding m10">顶！</div>
-		</div>
-		<div class="pic_box">
-			<div class="hidden">
-				<span></span><img src="http://shopping.geocities.jp/igtx/images/new/wx1_3_1.jpg" />
-			</div>
-			<div class="ding m10">顶！</div>
-		</div>
-		<div class="pic_box">
-			<div class="hidden">
-				<span></span><img src="http://shopping.geocities.jp/igtx/images/new/wx1_3_1.jpg" />
-			</div>
-			<div class="ding m10">顶！</div>
-		</div>
-		<div class="pic_box">
-			<div class="hidden">
-				<span></span><img src="http://shopping.geocities.jp/igtx/images/new/wx1_3_1.jpg" />
-			</div>
-			<div class="ding m10">顶！</div>
-		</div>
-		
+	{/foreach}	
 	</div>
 </body>
 </html>
