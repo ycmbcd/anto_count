@@ -87,7 +87,7 @@ a:hover {
 	height: 230px;
 	background:lightyellow;				
 	position: fixed;
-	top:50%;
+	top:40%;
 	margin-top:-115px;
 	left:50%;
 	margin-left:-225px;
@@ -103,6 +103,7 @@ a:hover {
 	opacity: 0.6;
 	display: none;
 	z-index: 1;
+	background:#353535;
 }
 #btn_yes,#btn_no{
 	width:80px;
@@ -123,7 +124,6 @@ a:hover {
 	margin-right:70px;
 }
 #warning_box div{
-	height:95px;
 	width:450px;		    	
 }
 #warning_text{
@@ -136,3 +136,43 @@ a:hover {
 	margin-left:125px;
 }	
 /*弹窗效果*/
+.btn_green,.btn_red,.btn_blue{
+	border-radius:6px;
+	font-size:16px;
+	font-family: "微软雅黑", "宋体", arial, sans-serif;
+	text-align:center;
+	cursor:pointer;
+	width:80px !important;
+	height:30px !important;
+	line-height:30px;
+	color:#FFF;
+	margin-top: -1px;}
+.btn_green{
+	border:1px solid #060;
+	background:#6C9;}
+.btn_red{
+	border:1px solid #E43838;
+	background:#FF7E7E;}
+.btn_blue{
+	border:1px solid #069;
+	background:#52ACB8;}
+.btn_green:hover{
+	background:#060;}
+.btn_red:hover{
+	background:#E43838;}
+.btn_blue:hover{
+	background:#069;}
+.t_table{
+	margin-top:40px;
+	border-collapse:collapse;}
+.t_table td{
+	color:#FF0;
+	font-size:22px;
+	text-align:center;
+	border:1px solid #FFF;
+	height:40px;
+	width:400px;}
+#c_theme{
+	float:left;
+	font-size:16px;
+	margin:58px 0 0 520px;}

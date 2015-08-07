@@ -24,7 +24,10 @@ $(document).ready(function(){
 function anto_upload(){
 	alert("111")
 }
-
+function change_theme(){
+	var c_theme=$("#c_theme").val();
+	$("#this_theme").val(c_theme);
+}
 </script>
 {/literal}
 </head>
@@ -32,11 +35,12 @@ function anto_upload(){
 <!--弹窗效果-->					
 <form action="#" method="post" enctype="multipart/form-data">
 <div id="warning_box">
+	<div style="margin:20px 0 0 40px;">您要参赛的主题：<input id="this_theme" readonly style="border:none;background:lightyellow; font-size:16px;" type="text" value="" /></div>
 	<div id="warning_text"></div>
 	<input id="file"  type="file" name="uimg" style="height:30px;" >
 	<div>
-	<input class="button" type="submit" id="anto_yes" value="上传" onclick="anto_upload()" />
-	<input class="button" type="button" id="anto_no" value="取消" />
+    <div id="anto_yes" class="btn_green" onclick="anto_upload()" >上 传</div>
+    <div id="anto_no" class="btn_green" >取 消</div>
 	</div>
 </div>
 </form>
@@ -46,7 +50,15 @@ function anto_upload(){
 <body style="background:#464646;">
 
 	<div class="auto w1300" id="top">
-        <div class="right" style="margin-right:20px;margin-top:10px;cursor:pointer;"><img src="/images/sys.png" /></div>
+    <div class="auto w1300">
+    	 <select id="c_theme" onChange="change_theme()" style="width:200px;">
+        	<option value="0">请选择投票主题...</option> 
+        	{foreach $resu as $se}
+            <option value="{$se.theme}">{$se.theme}</option>
+            {/foreach}
+		</select>
+    </div>
+        <div class="right" style="margin-right:20px;margin-top:10px;cursor:pointer;"><img onClick="window.location.href='/system.php';" src="/images/sys.png" /></div>
         <div id="count" class="right" style="margin-top:10px;margin-right:10px;cursor:pointer;"><img src="/images/count.png" /></div>
 		<div id="up" class="right" style="margin-top:10px;margin-right:10px;cursor:pointer;"><img src="/images/up.png" /></div>
         <div class="clear"></div>
