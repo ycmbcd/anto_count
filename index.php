@@ -15,7 +15,7 @@ if(@$_POST['submit']=="yes")
 
  //由文件上传导致的错误,终止程序执行 ，重新上传
  if ($_FILES['uimg']['error'] > 0) 
-    {echo "<script>alert('上传错误！');history.go(-1);</script>";}else
+/*    {echo "<script>alert('上传错误！');history.go(-1);</script>";}else
 //移动上传文件到uploads目录
 
    {
@@ -23,7 +23,7 @@ if(@$_POST['submit']=="yes")
     echo "<script>alert('上传成功！');window.location='insert.php';</script>";
    }  
 }
-		/*$db = new DB();
+		*//*$db = new DB();
 		$sql = "insert into c_theme (theme) values ('{$new_theme}');";
 		$res = $db->execute($sql);*/
 		echo "<script>alert(1)</script>";
