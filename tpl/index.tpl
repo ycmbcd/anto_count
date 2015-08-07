@@ -16,12 +16,13 @@ $(document).ready(function(){
 </head>
 
 <body style="background:#464646;">
-	<div class="auto w1300 m10" id="top">
-        <div class="right" style="margin-right:20px;margin-top:10px;cursor:pointer;"><img src="/images/count.png" /></div>
-		<div class="right" style="margin-top:10px;cursor:pointer;"><img src="/images/up.png" /></div>
+	<div class="auto w1300" id="top">
+        <div class="right" style="margin-right:20px;margin-top:10px;cursor:pointer;"><img src="/images/sys.png" /></div>
+        <div class="right" style="margin-top:10px;margin-right:10px;cursor:pointer;"><img src="/images/count.png" /></div>
+		<div class="right" style="margin-top:10px;margin-right:10px;cursor:pointer;"><img src="/images/up.png" /></div>
         <div class="clear"></div>
 	</div>
-	<div class="auto w1300" style="margin-top:30px;" id="middle">
+	<div class="auto w1300" style="margin-top:200px;" id="middle">
 		<div class="pic_box">
 			<div class="hidden">
 				<span></span><img src="http://shopping.geocities.jp/igtx/images/new/wx1_3_1.jpg" />
