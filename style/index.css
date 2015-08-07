@@ -80,3 +80,59 @@ a:hover {
 #middle{
 	height: 900px;
 }
+
+/*弹窗效果*/
+#warning_box{
+	width: 450px;
+	height: 230px;
+	background:lightyellow;				
+	position: fixed;
+	top:50%;
+	margin-top:-115px;
+	left:50%;
+	margin-left:-225px;
+	display: none;
+	z-index: 2;
+}
+#shade{
+	width: 100%;
+	height: 4000px;							
+	position: fixed;
+	top:0;
+	left:0;
+	opacity: 0.6;
+	display: none;
+	z-index: 1;
+}
+#btn_yes,#btn_no{
+	width:80px;
+	height:50px;
+	background:#CCCCCC;
+}			
+.button{
+	width: 80px;
+	height: 30px;
+	margin-top:50px;				
+}
+#anto_yes{
+	float: left;
+	margin-left:70px;
+}
+#anto_no{
+	float: right;
+	margin-right:70px;
+}
+#warning_box div{
+	height:95px;
+	width:450px;		    	
+}
+#warning_text{
+	line-height:95px;
+	font-size:22px;
+	text-align:center;
+}
+#file{
+	width: 200px;
+	margin-left:125px;
+}	
+/*弹窗效果*/
