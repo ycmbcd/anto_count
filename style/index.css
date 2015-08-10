@@ -93,8 +93,9 @@ a:hover {
 	height: 900px;
 }
 .ding,.piao{
+	font-family:微软雅黑,Verdana, Geneva, sans-serif;
 	font-size:30px;
-	color:#FF6;}
+	color:#FF9;}
 .ding{
 	background:url(../images/ding.png) no-repeat;
 	height:50px;

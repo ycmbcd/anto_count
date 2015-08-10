@@ -125,7 +125,7 @@ function add_num(e){
 			<div class="hidden">
 				<span></span><img src="/uploads/{$se.c_pic}" />
 			</div>
-            <div class="piao m10" id="piao_{$se.id}">{$se.c_num}</div>
+            <div class="piao" id="piao_{$se.id}">{$se.c_num}</div>
 			<div class="ding" onClick="add_num('{$se.id}')"></div><!--顶一下-->
 		</div>
 	{/foreach}	
