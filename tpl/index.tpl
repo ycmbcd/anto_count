@@ -15,7 +15,10 @@ $(document).ready(function(){
 	var ss =$("#middle").find(".moimg").attr("src");
 	if(ss=="/uploads/"){
 		$("#middle").hide();
-	}
+		$("#shouye").hide();
+		$("#up").hide();
+		$("body").append("<div class='auto w1300' style='margin-top:160px;'>{/literal}<ul>{foreach $re_theme as $th}<a href=\"index.php?change_theme={$th.theme}\"><li class=\'re_theme\'>{$th.theme}</li></a>{/foreach}</ul></div>")
+	}{literal}
 	$("#up").click(function(){
 		//$("#warning_text").html("请选择你要上传的图片")
 		$("#warning_box").fadeIn(0);
@@ -140,8 +143,9 @@ function noclick(){
 		</select>
     </div>
         <div class="right" style="margin-right:20px;margin-top:10px;cursor:pointer;"><img onClick="window.location.href='/system.php';" src="/images/sys.png" /></div>
-        <div id="count" class="right" style="margin-top:10px;margin-right:10px;cursor:pointer;"><img src="/images/count.png" /></div>
+        <div id="count" class="right" style="margin-top:10px;margin-right:10px;cursor:pointer;"><img onClick="window.location.href='/chart.php';" src="/images/count.png" /></div>
 		<div id="up" class="right" style="margin-top:10px;margin-right:10px;cursor:pointer;"><img src="/images/up.png" /></div>
+        <div id="shouye" class="right" style="margin-top:10px;margin-right:10px;cursor:pointer;"><img onClick="window.location.href='/index.php';" src="/images/back.png" /></div>
         <div class="clear"></div>
 	</div>
 	<div class="auto w1300" style="margin-top:200px;" id="middle">

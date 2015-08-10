@@ -7,11 +7,13 @@
 		$res = $db->execute($sql);
 		$smarty->assign("resu",$res);
 		$smarty->assign("key_theme","请选择投票主题...");
-	//查询作品
-		$db = new DB();
-		$sql = "select * from c_uploads order by id desc;";
-		$res = $db->execute($sql);
+	//默认无作品
 		$smarty->assign("pic_cool",0);
+	//默认显示主题
+		$db = new DB();
+		$sql = "select * from c_theme order by id desc;";
+		$res = $db->execute($sql);
+		$smarty->assign("re_theme",$res);
 	//切换主题
 	if(isset($_GET['change_theme'])){
 		$c_theme=$_GET['change_theme'];
@@ -53,7 +55,7 @@
     	$db = new DB();
 		$sql = "insert into c_uploads (c_pic,c_num,c_theme) values ('{$pic_name}','0','{$this_theme}');";
 		$res = $db->execute($sql);
-    	echo "<script>alert('上传成功！');history.go(-1);</script>";
+    	echo "<script>alert('上传成功，请刷新！');history.go(-1);</script>";
    }  
 		
 		return false;
