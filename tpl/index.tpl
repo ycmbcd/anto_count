@@ -8,6 +8,9 @@
 {literal}
 <script>
 // 弹窗
+var arr_noclick=[];
+
+var str_noclick='';
 $(document).ready(function(){
 	var ss =$("#middle").find(".moimg").attr("src");
 	if(ss=="/uploads/"){
@@ -23,8 +26,10 @@ $(document).ready(function(){
 		$("#shade").fadeOut(0);
 	
 	})
-	pic_big();			
+	pic_big();
+	noclick()
 })
+
 function cancel(){
 	$("#warning_box").fadeOut(0);
 	$("#shade").fadeOut(0);
@@ -87,10 +92,25 @@ function add_num(e){
             } 
 	})
 }
+function noclick(){
+	$(".ding").each(function(){
+		$(this).click(function(){
+			var idd = $(this).attr("id");
+			arr_noclick = localStorage.lastname.split(",");
+			n = $.inArray(idd,arr_noclick);
+			if(n<1){
+				arr_noclick.push(idd);
+			}
+			localStorage.lastname = arr_noclick.join(",");
+			alert(localStorage.lastname)
+			$("#cccc").html(1212)
+		})
+	})
+}
 </script>
 {/literal}
 </head>
-
+<div id="cccc" style="color:#fff">121212</div>
 <!--弹窗效果-->					
 <form id="up_pic" action="/index.php" method="post" enctype="multipart/form-data">
 <div id="warning_box">
@@ -131,7 +151,7 @@ function add_num(e){
 				<span></span><img class="moimg" src="/uploads/{$se.c_pic}" />
 			</div>
             <div class="piao" id="piao_{$se.id}">{$se.c_num}</div>
-			<div class="ding id_{$se.id}" onClick="add_num('{$se.id}')"></div><!--顶一下-->
+			<div class="ding id_{$se.id}" id="id_{$se.id}" onClick="add_num('{$se.id}')"></div><!--顶一下-->
 		</div>
 	{/foreach}	
 	</div>

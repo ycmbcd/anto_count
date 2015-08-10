@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="js/jquery.js"></script>
+
+<script>
+alert($)
+$(function(){
+     $("#btnVote").click(function(){
+           if($.cookie("vote")!=null){
+               alert("已经投过票,请无重复投票,谢谢!");
+               return;
+           }else{
+              $("#voteNum").text(parseInt($("#voteNum").text())+1); //票数加1
+              alert("谢谢投票!");
+              //写cookie到客户端
+              $.cookie("vote","XXX", {expires: 7, path: ‘/’, domain: ‘jquery.com’, secure: true});
+           }
+     });
+});	
+</script>
+</head>
+
+<body>
+	共<span id="voteNum">0</span>票
+<input type="button" id="btnVote" value="投票"/>
+
+
+</body>
+</html>
