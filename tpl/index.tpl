@@ -80,6 +80,7 @@ function add_num(e){
 					ss=ss-0;
 					ss=ss+1;
 					$("#piao_"+e).html(ss);
+					$(".id_"+e).css({background:"url(../images/no_ding.png)"});
 				}else{
 					alert("系统错误！");
 				}    
@@ -130,7 +131,7 @@ function add_num(e){
 				<span></span><img class="moimg" src="/uploads/{$se.c_pic}" />
 			</div>
             <div class="piao" id="piao_{$se.id}">{$se.c_num}</div>
-			<div class="ding" onClick="add_num('{$se.id}')"></div><!--顶一下-->
+			<div class="ding id_{$se.id}" onClick="add_num('{$se.id}')"></div><!--顶一下-->
 		</div>
 	{/foreach}	
 	</div>
