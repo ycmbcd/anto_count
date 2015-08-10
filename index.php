@@ -19,6 +19,17 @@
 		$res = $db->execute($sql);
 		$smarty->assign("pic_cool",$res);
 		$smarty->assign("key_theme",$c_theme);
+		$smarty->display("index.tpl");
+		return false;
+	}
+	//投票
+	if(isset($_GET['add_num'])){
+		$id=$_GET['add_num'];
+		$db = new DB();
+		$sql = "update c_uploads set c_num=c_num+1 where id='{$id}';";
+		$res = $db->execute($sql);
+		echo "ok";
+		return false;
 	}
 	//参赛
 	if(isset($_POST['this_theme'])){

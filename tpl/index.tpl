@@ -64,6 +64,24 @@ function pic_big(){
 		$("#pics").fadeOut(200);
 	})
 }
+function add_num(e){
+	/////zheli
+	$.ajax({
+			type:"GET",
+			url:"index.php",
+			data:"add_num="+e,
+			success:function(data){
+				if(data=="ok"){
+					var ss=$("#piao_"+e).html();
+					ss=ss-0;
+					ss=ss+1;
+					$("#piao_"+e).html(ss);
+				}else{
+					alert("系统错误！");
+				}    
+            } 
+	})
+}
 </script>
 {/literal}
 </head>
@@ -81,7 +99,7 @@ function pic_big(){
 </form>
 <div id="shade" onClick="cancel()"></div>
 <div id="shade2"></div>
-<div id="pics"><img src=""></div>
+<div id="pics"><img style="margin-bottom:120px;" src=""></div>
 <!--/弹窗效果-->
 
 <body style="background:#464646;">
@@ -89,7 +107,7 @@ function pic_big(){
 	<div class="auto w1300" id="top">
     <div id="key_theme">{$key_theme}</div>
     <div class="auto w1300">
-    	 <select id="c_theme" onChange="change_theme()" style="width:200px; opacity:0;">
+    	 <select id="c_theme" onChange="change_theme()" style="width:196px; opacity:0;">
         	<option value="0">请选择投票主题...</option> 
         	{foreach $resu as $se}
             <option value="{$se.theme}">{$se.theme}</option>
@@ -107,7 +125,8 @@ function pic_big(){
 			<div class="hidden">
 				<span></span><img src="/uploads/{$se.c_pic}" />
 			</div>
-			<div class="ding m10">{$se.c_num}</div>
+            <div class="piao m10" id="piao_{$se.id}">{$se.c_num}</div>
+			<div class="ding" onClick="add_num('{$se.id}')"></div><!--顶一下-->
 		</div>
 	{/foreach}	
 	</div>
