@@ -10,7 +10,7 @@
 window.onload=function(){
 	var name=prompt("请输入口令：","")
   	if (name=="11223300"){
-    	$("#sys").show(200);
+    	$("#sys").show(300);
     }
 	else{
 		alert("输入错误！");window.location=("index.php");

@@ -11,7 +11,8 @@
 		$db = new DB();
 		$sql = "select * from c_uploads order by id desc;";
 		$res = $db->execute($sql);
-		$smarty->assign("pic_cool",$res);
+		$smarty->assign("pic_cool",0);
+	//切换主题
 	if(isset($_GET['change_theme'])){
 		$c_theme=$_GET['change_theme'];
 		$db = new DB();

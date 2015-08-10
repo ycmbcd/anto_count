@@ -9,6 +9,10 @@
 <script>
 // 弹窗
 $(document).ready(function(){
+	var ss =$("#middle").find(".moimg").attr("src");
+	if(ss=="/uploads/"){
+		$("#middle").hide();
+	}
 	$("#up").click(function(){
 		//$("#warning_text").html("请选择你要上传的图片")
 		$("#warning_box").fadeIn(0);
@@ -121,9 +125,9 @@ function add_num(e){
 	</div>
 	<div class="auto w1300" style="margin-top:200px;" id="middle">
     {foreach $pic_cool as $se}
-		<div class="pic_box">
+		<div class="pic_box" onlyclick="0">
 			<div class="hidden">
-				<span></span><img src="/uploads/{$se.c_pic}" />
+				<span></span><img class="moimg" src="/uploads/{$se.c_pic}" />
 			</div>
             <div class="piao" id="piao_{$se.id}">{$se.c_num}</div>
 			<div class="ding" onClick="add_num('{$se.id}')"></div><!--顶一下-->
