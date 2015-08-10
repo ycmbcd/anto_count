@@ -9,8 +9,10 @@
 <script>
 // 弹窗
 var arr_noclick=[];
-
 var str_noclick='';
+if(localStorage.lastname==undefined){
+	localStorage.lastname='1';
+}
 $(document).ready(function(){
 	var ss =$("#middle").find(".moimg").attr("src");
 	if(ss=="/uploads/"){
