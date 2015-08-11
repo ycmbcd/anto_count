@@ -179,8 +179,7 @@ function picready(){
 <!--弹窗效果-->					
 <form id="up_pic" action="/index.php" method="post" enctype="multipart/form-data">
 <div id="warning_box">
-	<div style="margin:20px 0 0 40px;font-size:14px;">您要参赛的主题：<input id="this_theme" name="this_theme" readonly style="border:none;background:lightyellow;font-size:20px;color:#C00;" type="text" value="{$key_theme}" /></div>
-    <div style="margin:20px 0 0 40px;font-size:14px;">参选人：<input style="width:100px;height:24px;padding-left:4px;" type="text" name="maker" /></div>
+	<div style="margin:30px 0 0 40px;font-size:14px;">您要参赛的主题：<input id="this_theme" name="this_theme" readonly style="border:none;background:lightyellow;font-size:20px;color:#C00;" type="text" value="{$key_theme}" /></div>
 	<input id="file"  type="file" name="uimg" style="height:30px;" >
 	<div>
     <div id="anto_yes" class="btn_green" onclick="anto_upload()" >上 传</div>
@@ -239,6 +238,7 @@ function picready(){
 			<div class="hidden">
 				<span></span><img class="moimg" src="/uploads/{$se.c_pic}" />
 			</div>
+            <div style="font-size:14px; color:#FFF;">参赛者：{$se.c_who}</div>
             <div class="piao" id="piao_{$se.id}">{$se.c_num}</div>
 			<div class="ding id_{$se.id}" id="id_{$se.id}" onClick="add_num('{$se.id}')"></div><!--顶一下-->
 		</div>

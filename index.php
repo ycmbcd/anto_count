@@ -117,7 +117,11 @@
 		}
 	}
 	//参赛
-	if(isset($_POST['this_theme'])){
+if(isset($_POST['this_theme'])){
+if($name==""){
+			echo "<script>alert('请登录！');history.go(-1);</script>";
+			return false;
+}else{
 		$this_theme = $_POST['this_theme'];
 //生成图片名
 	$rans = rand("100","999");
@@ -135,13 +139,14 @@
      	move_uploaded_file($_FILES['uimg']['tmp_name'], "./uploads/".$pic_name.".".$extName);//移动文件到指定文件夹uploads；
     	$pic_name=$pic_name.".".$extName;
     	$db = new DB();
-		$sql = "insert into c_uploads (c_pic,c_num,c_theme) values ('{$pic_name}','0','{$this_theme}');";
+		$sql = "insert into c_uploads (c_pic,c_num,c_theme,c_who) values ('{$pic_name}','0','{$this_theme}','{$name}');";
 		$res = $db->execute($sql);
     	echo "<script>alert('上传成功，请刷新！');history.go(-1);</script>";
    }  
 		
 		return false;
 	}
+}
 	//退出系统
 	if(isset($_GET['logout'])){
 		echo "<script>window.location='index.php';</script>";

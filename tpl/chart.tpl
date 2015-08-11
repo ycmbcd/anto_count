@@ -56,7 +56,7 @@ function change_chart(){
 		}
 		var ss="";
 		for(i=0;i<sleng;i++){
-			var ss=ss+"<div class='left txt_chart'><img class='chart_img' src='/uploads/"+data[i].c_pic+"' /><br />"+data[i].c_pic+"</div>";	
+			var ss=ss+"<div class='left txt_chart'><img class='chart_img' src='/uploads/"+data[i].c_pic+"' /><br />【"+data[i].c_who+"】"+data[i].c_pic+"</div>";	
 		}
 		$("#sss").html(ss);
 		$("#sss").css({width:200*sleng+"px"})
