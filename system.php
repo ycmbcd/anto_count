@@ -33,6 +33,9 @@
 		$db = new DB();
 		$sql = "update piao set all_piao='{$change_piao}';";
 		$res = $db->execute($sql);
+		$db = new DB();
+		$sql = "update user_count set piao='';";
+		$res = $db->execute($sql);
 		echo "ok";
 		return false;
 	}

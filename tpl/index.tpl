@@ -215,7 +215,7 @@ function picready(){
 <!--/reg-->
 <body style="background:#464646;">
 	<div class="auto w1300" id="top">
-    <div id="welcome_user">你好，{$anto_name|default:"请登录"}！<a style="color:#FF9;" href="index.php?logout">退出</a><div id="has_piao">{$piao|default:""}</div></div>
+    <div id="welcome_user">你好，{$anto_name|default:"请登录"}！<a style="color:#FF9;" href="index.php?logout">退出</a><div id="has_piao" style="display:none;">{$piao|default:""}</div></div>
     <div id="key_theme">{$key_theme}</div>
     <div class="auto w1300">
     	 <select id="c_theme" onChange="change_theme()" style="width:196px; opacity:0;">
@@ -231,7 +231,7 @@ function picready(){
         <div id="shouye" class="right" style="margin-top:10px;margin-right:10px;cursor:pointer;"><img onClick="window.location.href='/index.php';" src="/images/back.png" /></div>
         <div id="login" class="right" style="margin-top:10px;margin-right:10px;cursor:pointer;"><img onClick="u_login()" src="/images/log.png" /></div>
         <div id="regist" class="right" style="margin-top:10px;margin-right:10px;cursor:pointer;"><img onClick="u_reg()" src="/images/reg.png" /></div
-        <div class="clear"></div>
+        ><div class="clear"></div>
 	</div>
 	<div class="auto w1300" style="margin-top:200px;" id="middle">
     {foreach $pic_cool as $se}

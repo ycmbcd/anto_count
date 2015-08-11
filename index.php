@@ -75,26 +75,46 @@
 	}
 	//投票
 	if(isset($_GET['add_num'])){
-		$id=$_GET['add_num'];
-		$sql = "select * from user_count where name='{$name}';";
-		$res = $db->execute($sql);
-		foreach($res as $value);
-		$piao = $value['piao'];
-		$hasnt = strpos($piao,$id);
-		if($hasnt==""){
-			$db = new DB();
-			$sql = "update c_uploads set c_num=c_num+1 where id='{$id}';";
-			$res = $db->execute($sql);
-			$db = new DB();
-			$piao = $piao.",".$id;
-			$db = new DB();
-			$sql = "update user_count set piao='{$piao}' where name='{$name}';";
-			$res = $db->execute($sql);
-			echo "ok";
+		if($name==""){
+			return false;
 		}else{
-			echo "hasding";
+			$id=$_GET['add_num'];
+			$db = new DB();
+			$sql = "select * from user_count where name='{$name}';";
+			$res = $db->execute($sql);
+			foreach($res as $value);
+			$piao = $value['piao'];
+			//查看剩余票数
+			$arr_piao = explode(",", $piao); 
+		 	$aa = count($arr_piao);
+		 	//查询每个人总票数
+		 	$db = new DB();
+			$sql = "select * from piao;";
+			$res = $db->execute($sql);
+			foreach($res as $value);
+			$all_piao = $value['all_piao'];
+			if($all_piao < $aa){
+				echo "nopiao";
+				return false;
+			}else{
+				//可以投票
+				$hasnt = strpos($piao,$id);
+				if($hasnt==""){
+					$db = new DB();
+					$sql = "update c_uploads set c_num=c_num+1 where id='{$id}';";
+					$res = $db->execute($sql);
+					$db = new DB();
+					$piao = $piao.",".$id;
+					$db = new DB();
+					$sql = "update user_count set piao='{$piao}' where name='{$name}';";
+					$res = $db->execute($sql);
+					echo "ok";
+				}else{
+					echo "hasding";
+				}
+				return false;
+			}
 		}
-		return false;
 	}
 	//参赛
 	if(isset($_POST['this_theme'])){
