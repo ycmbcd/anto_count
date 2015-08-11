@@ -32,7 +32,7 @@ $(document).ready(function(){
 		$("#shade").fadeOut(0);
 	})
 	pic_big();
-	readyclick();
+	picready()
 })
 
 function cancel(){
@@ -166,6 +166,13 @@ function login_anto(){
 		})
 	}
 }
+function picready(){
+	var str_no_pic = $("#has_piao").text();
+	var arr_no_pic = str_no_pic.split(",");
+	for(i=1;i<arr_no_pic.length;i++){
+		$("#id_"+arr_no_pic[i]).css({"background":"url(/images/no_ding.png)"})
+	}
+}
 </script>
 {/literal}
 </head>
@@ -208,7 +215,7 @@ function login_anto(){
 <!--/reg-->
 <body style="background:#464646;">
 	<div class="auto w1300" id="top">
-    <div id="welcome_user">你好，{$anto_name|default:"请登录"}！<a style="color:#FF9;" href="index.php?logout">退出</a><div id="has_piao">{$piao|default:"0"}</div></div>
+    <div id="welcome_user">你好，{$anto_name|default:"请登录"}！<a style="color:#FF9;" href="index.php?logout">退出</a><div id="has_piao">{$piao|default:""}</div></div>
     <div id="key_theme">{$key_theme}</div>
     <div class="auto w1300">
     	 <select id="c_theme" onChange="change_theme()" style="width:196px; opacity:0;">
