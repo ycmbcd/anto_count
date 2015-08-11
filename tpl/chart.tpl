@@ -18,8 +18,9 @@ function change_chart(){
 				if(data){
 					var c_theme=$("#c_theme").val();
 					tubiao(data,c_theme);
+					$("#tips").hide();
 				}else{
-					alert("系统错误！");
+					alert("错误！");
 				}    
             } 
 	})
@@ -31,7 +32,7 @@ function change_chart(){
 <div class="auto w1300" id="top">
     <div class="auto w1300">
      <select id="c_theme" onChange="change_chart()" style="width:196px;">
-        <option value="0">请选择投票主题...</option> 
+     <option value="0">请选择投票主题...</option> 
         {foreach $resu as $se}
         <option value="{$se.theme}">{$se.theme}</option>
         {/foreach}
@@ -55,7 +56,7 @@ function change_chart(){
 		}
 		var ss="";
 		for(i=0;i<sleng;i++){
-			var ss=ss+"<div class='left txt_chart'><img class='chart_img' src='/uploads/"+data[i].c_pic+"' /></div>";	
+			var ss=ss+"<div class='left txt_chart'><img class='chart_img' src='/uploads/"+data[i].c_pic+"' /><br />"+data[i].c_pic+"</div>";	
 		}
 		$("#sss").html(ss);
 		$("#sss").css({width:200*sleng+"px"})
@@ -114,5 +115,6 @@ function change_chart(){
     </script>
     {/literal}
     <div id="sss" style="margin-left:120px; margin-top:-20px; position:absolute;"></div>
+    <div id="tips" class="auto w1300" style="font-size:50px; color:#C00;text-align:center; top:400px; position:fixed;left:200px;">选择主题，查看投票情况！</div>
 </body>
 </html>

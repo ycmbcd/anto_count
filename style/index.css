@@ -121,9 +121,10 @@ a:hover {
 	background:#2E5478;
 	color:#FFF;}
 .chart_img{
-	width:100px;}
+	width:120px;}
 .txt_chart{
-	font-size:20px;}
+	color:#666;
+	font-size:12px;}
 /*弹窗效果*/
 #warning_box{
 	width: 450px;

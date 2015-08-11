@@ -138,7 +138,7 @@ function noclick(){
     <div id="key_theme">{$key_theme}</div>
     <div class="auto w1300">
     	 <select id="c_theme" onChange="change_theme()" style="width:196px; opacity:0;">
-        	<option value="0">请选择投票主题...</option> 
+            <option value="0">请选择投票主题...</option> 
         	{foreach $resu as $se}
             <option value="{$se.theme}">{$se.theme}</option>
             {/foreach}
