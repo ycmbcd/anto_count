@@ -51,7 +51,9 @@ a:hover {
 	height: 400px;
 	float: left;
 	margin-left: 20px;
+	margin-top:0px;
 	text-align: center;
+	margin-bottom:40px;
 }
 .pic_box span{
 	height: 100%;

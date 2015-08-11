@@ -238,7 +238,7 @@ function picready(){
 			<div class="hidden">
 				<span></span><img class="moimg" src="/uploads/{$se.c_pic}" />
 			</div>
-            <div style="font-size:14px; color:#FFF;">参赛者：{$se.c_who}</div>
+            <div style="font-size:14px; margin-top:10px; color:#FFF;">参赛者：{$se.c_who}</div>
             <div class="piao" id="piao_{$se.id}">{$se.c_num}</div>
 			<div class="ding id_{$se.id}" id="id_{$se.id}" onClick="add_num('{$se.id}')"></div><!--顶一下-->
 		</div>
