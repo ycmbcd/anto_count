@@ -15,6 +15,18 @@
 		echo "ok";
 		return false;
 	}
+	//新建主题
+	if(isset($_POST['del_theme'])){
+		$del_theme = $_POST['del_theme'];
+		$db = new DB();
+		$sql = "delete from c_theme where theme='{$del_theme}';";
+		$res = $db->execute($sql);
+		$db = new DB();
+		$sql = "delete from c_uploads where c_theme='{$del_theme}';";
+		$res = $db->execute($sql);
+		echo "ok";
+		return false;
+	}
 //展示
 	$smarty->display("system.tpl");
 ?>

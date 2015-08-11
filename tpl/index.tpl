@@ -101,7 +101,7 @@ function noclick(e){
 			var idd = "id_"+e;			
 			arr_noclick = localStorage.lastname.split(",");
 			n = $.inArray(idd,arr_noclick);
-			if(n<1){
+			if(n<0){
 				arr_noclick.push(idd);
 				add_num(e);				
 				localStorage.lastname = arr_noclick.join(",");

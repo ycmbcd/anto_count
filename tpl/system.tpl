@@ -38,7 +38,18 @@ function add_theme(){
 	}
 }
 function del_theme(e){
-	alert(e)
+	$.ajax({
+			type:"POST",
+			url:"/system.php",
+			data:"del_theme="+e,
+			success:function(data){
+				if(data=="ok"){
+					window.location='system.php';
+				}else{
+					alert("添加失败！");
+				}    
+            } 
+	})
 }
 </script>
 {/literal}
