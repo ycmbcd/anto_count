@@ -15,7 +15,7 @@
 		echo "ok";
 		return false;
 	}
-	//新建主题
+	//删除主题
 	if(isset($_POST['del_theme'])){
 		$del_theme = $_POST['del_theme'];
 		$db = new DB();
@@ -23,6 +23,15 @@
 		$res = $db->execute($sql);
 		$db = new DB();
 		$sql = "delete from c_uploads where c_theme='{$del_theme}';";
+		$res = $db->execute($sql);
+		echo "ok";
+		return false;
+	}
+	//发票
+	if(isset($_POST['change_piao'])){
+		$change_piao = $_POST['change_piao'];
+		$db = new DB();
+		$sql = "update piao set all_piao='{$change_piao}';";
 		$res = $db->execute($sql);
 		echo "ok";
 		return false;

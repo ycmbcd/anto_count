@@ -97,7 +97,7 @@ function add_num(e){
 				}else if(data=="nopiao"){
 					alert("你的投票机会已用完！");
 				}else{
-					alert("系统错误！");
+					alert("请登录！");
 				}    
             } 
 	})

@@ -29,7 +29,8 @@ function add_theme(){
 			data:"new_theme="+new_theme,
 			success:function(data){
 				if(data=="ok"){
-					window.location='system.php';
+					alert("添加成功！");
+					window.location='index.php';
 				}else{
 					alert("添加失败！");
 				}    
@@ -44,9 +45,26 @@ function del_theme(e){
 			data:"del_theme="+e,
 			success:function(data){
 				if(data=="ok"){
-					window.location='system.php';
+					alert("删除成功！");
+					window.location='index.php';
 				}else{
 					alert("添加失败！");
+				}    
+            } 
+	})
+}
+function change_piao(){
+	var all_piao= $("#all_piao").val();
+	$.ajax({
+			type:"POST",
+			url:"/system.php",
+			data:"change_piao="+all_piao,
+			success:function(data){
+				if(data=="ok"){
+					alert("发票成功！");
+					window.location='index.php';
+				}else{
+					alert("失败！");
 				}    
             } 
 	})
@@ -78,6 +96,7 @@ function del_theme(e){
     {/foreach}
         </table>
     </div>
+    <div class="w1300 auto" style="width:400px;margin-top:50px;color:#FFF;font-size:20px;">发票：每人 <input id="all_piao" class="ttt" type="text" /> 票<div class="btn_green right" onClick="change_piao()">确 定</div></div>
 </div>
 </body>
 </html>

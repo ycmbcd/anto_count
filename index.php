@@ -75,7 +75,6 @@
 	}
 	//投票
 	if(isset($_GET['add_num'])){
-		//判断是否登录
 		$id=$_GET['add_num'];
 		$sql = "select * from user_count where name='{$name}';";
 		$res = $db->execute($sql);
