@@ -10,6 +10,7 @@
 // 弹窗
 var arr_noclick=[];
 var str_noclick='';
+
 if(localStorage.lastname==undefined){
 	localStorage.lastname='1';
 }
@@ -32,7 +33,7 @@ $(document).ready(function(){
 	
 	})
 	pic_big();
-	noclick()
+	readyclick();
 })
 
 function cancel(){
@@ -79,7 +80,6 @@ function pic_big(){
 	})
 }
 function add_num(e){
-	/////zheli
 	$.ajax({
 			type:"GET",
 			url:"index.php",
@@ -97,25 +97,28 @@ function add_num(e){
             } 
 	})
 }
-function noclick(){
-	$(".ding").each(function(){
-		$(this).click(function(){
-			var idd = $(this).attr("id");
+function noclick(e){
+			var idd = "id_"+e;			
 			arr_noclick = localStorage.lastname.split(",");
 			n = $.inArray(idd,arr_noclick);
 			if(n<1){
 				arr_noclick.push(idd);
+				add_num(e);				
+				localStorage.lastname = arr_noclick.join(",");
+			}else{
+				alert("你已投过了");
+				return false;
+			}					
+}
+function readyclick(){
+			arr_noclick = localStorage.lastname.split(",");
+			for(i=1;i<arr_noclick.length;i++){			
+				$("#"+arr_noclick[i]).css({"background":"url(/images/no_ding.png)"})
 			}
-			localStorage.lastname = arr_noclick.join(",");
-			alert(localStorage.lastname)
-			$("#cccc").html(1212)
-		})
-	})
 }
 </script>
 {/literal}
 </head>
-<div id="cccc" style="color:#fff">121212</div>
 <!--弹窗效果-->					
 <form id="up_pic" action="/index.php" method="post" enctype="multipart/form-data">
 <div id="warning_box">
@@ -157,7 +160,7 @@ function noclick(){
 				<span></span><img class="moimg" src="/uploads/{$se.c_pic}" />
 			</div>
             <div class="piao" id="piao_{$se.id}">{$se.c_num}</div>
-			<div class="ding id_{$se.id}" id="id_{$se.id}" onClick="add_num('{$se.id}')"></div><!--顶一下-->
+			<div class="ding id_{$se.id}" id="id_{$se.id}" onClick="noclick('{$se.id}')"></div><!--顶一下-->
 		</div>
 	{/foreach}	
 	</div>
