@@ -16,7 +16,8 @@ function change_chart(){
 			dataType:"json",
 			success:function(data){
 				if(data){
-					tubiao(data);
+					var c_theme=$("#c_theme").val();
+					tubiao(data,c_theme);
 				}else{
 					alert("系统错误！");
 				}    
@@ -44,7 +45,7 @@ function change_chart(){
 {literal}
     <script src="/js/echarts-all.js"></script>
     <script type="text/javascript">
-	function tubiao(data){
+	function tubiao(data,e){
 		var sleng = data.length;
 		var shuju = [];
 		var tupian = [];
@@ -54,25 +55,22 @@ function change_chart(){
 		}
 		var ss="";
 		for(i=0;i<sleng;i++){
-			var ss=ss+"<div class='left txt_chart'><img class='chart_img' src='/uploads/"+data[i].c_pic+"' /><br>"+data[i].c_pic+"</div>";	
+			var ss=ss+"<div class='left txt_chart'><img class='chart_img' src='/uploads/"+data[i].c_pic+"' /></div>";	
 		}
 		$("#sss").html(ss);
-		$("#sss").css({width:400*sleng+"px"})
-		$("#main").css({width:404*sleng+"px"})
-		$(".txt_chart").css({width:"400px"});
+		$("#sss").css({width:200*sleng+"px"})
+		$("#main").css({width:203*sleng+"px"})
+		$(".txt_chart").css({width:"199px"});
 		  // 基于准备好的dom，初始化echarts图表
         var myChart = echarts.init(document.getElementById('main')); 
         
         var option = {
+			title : {
+       		 text: e,
+    		},
             tooltip: {
                 show: true
             },
-			toolbox: {
-        		show : true,
-        		feature : {
-            		saveAsImage : {show: true}
-       			}
-    		},
 	 		calculable : true,
             legend: {
                 data:['票数']
@@ -92,9 +90,22 @@ function change_chart(){
                 {
                     "name":"票数",
                     "type":"bar",
-                    "data":shuju
+                    "data":shuju,
+					itemStyle: {
+                normal: {
+                    color: '#AE0001',
+                    label : {
+                        show: true, 
+                        position: 'top',
+                        textStyle: {
+                            color: '#333'
+                        }
+                    }
+                }
+            },
                 }
             ]
+			
         };
 
         // 为echarts对象加载数据 
@@ -102,6 +113,6 @@ function change_chart(){
 	}
     </script>
     {/literal}
-    <div id="sss" style="margin-left:180px; position:absolute;"></div>
+    <div id="sss" style="margin-left:120px; margin-top:-20px; position:absolute;"></div>
 </body>
 </html>
