@@ -115,6 +115,6 @@ function change_chart(){
     </script>
     {/literal}
     <div id="sss" style="margin-left:120px; margin-top:-20px; position:absolute;"></div>
-    <div id="tips" class="auto w1300" style="font-size:50px; color:#C00;text-align:center; top:400px; position:fixed;left:200px;">选择主题，查看投票情况！</div>
+    <div id="tips" class="auto w1300" style="font-size:50px; margin-left:-660px; color:#C00;text-align:center; top:400px; position:fixed;left:50%;">选择主题，查看投票情况！</div>
 </body>
 </html>

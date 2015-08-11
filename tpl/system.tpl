@@ -9,7 +9,7 @@
 <script>
 window.onload=function(){
 	var name=prompt("请输入口令：","")
-  	if (name=="11223300"){
+  	if (name=="00"){
     	$("#sys").show(300);
     }
 	else{

@@ -125,6 +125,15 @@ a:hover {
 .txt_chart{
 	color:#666;
 	font-size:12px;}
+.ttt{
+	width:140px;
+	height:20px;
+	padding-left:4px;}
+#welcome_user{
+	position:absolute;
+	font-size:14px;
+	color:#FF9;
+	margin:4px 0 0 4px;}
 /*弹窗效果*/
 #warning_box{
 	width: 450px;
@@ -196,9 +205,9 @@ a:hover {
 	text-align:center;
 }
 #file{
-	margin-top:40px;
+	margin-top:20px;
 	font-size:20px;
-	margin-bottom:50px;
+	margin-bottom:20px;
 	width: 300px;
 	margin-left:100px;
 }	
