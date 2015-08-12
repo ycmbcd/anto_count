@@ -54,7 +54,7 @@
 	if(isset($_GET['change_theme'])){
 		$c_theme=$_GET['change_theme'];
 		$db = new DB();
-		$sql = "select * from c_uploads where c_theme='{$c_theme}' order by id desc;";
+		$sql = "select * from c_uploads where c_theme='{$c_theme}' order by rand();";
 		$res = $db->execute($sql);
 		$smarty->assign("pic_cool",$res);
 		$smarty->assign("key_theme",$c_theme);
@@ -98,20 +98,22 @@
 				return false;
 			}else{
 				//可以投票
-				$hasnt = strpos($piao,$id);
-				if($hasnt==""){
-					$db = new DB();
-					$sql = "update c_uploads set c_num=c_num+1 where id='{$id}';";
-					$res = $db->execute($sql);
-					$db = new DB();
-					$piao = $piao.",".$id;
-					$db = new DB();
-					$sql = "update user_count set piao='{$piao}' where name='{$name}';";
-					$res = $db->execute($sql);
-					echo "ok";
-				}else{
-					echo "hasding";
+				for($i=0;$i<$aa;$i++){
+					$pig=$arr_piao[$i];
+					if($pig==$id){
+						echo "hasding";
+						return false;
+					}
 				}
+				$db = new DB();
+				$sql = "update c_uploads set c_num=c_num+1 where id='{$id}';";
+				$res = $db->execute($sql);
+				$db = new DB();
+				$piao = $piao.",".$id;
+				$db = new DB();
+				$sql = "update user_count set piao='{$piao}' where name='{$name}';";
+				$res = $db->execute($sql);
+				echo "ok";
 				return false;
 			}
 		}

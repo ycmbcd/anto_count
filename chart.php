@@ -18,7 +18,7 @@
 	if(isset($_GET['change_chart'])){
 		$s_theme=$_GET['change_chart'];
 		$db = new DB();
-		$sql = "select * from c_uploads where c_theme='{$s_theme}';";
+		$sql = "select * from c_uploads where c_theme='{$s_theme}' order by c_num desc;";
 		$res = $db->execute($sql);
 		echo json_encode($res);
 		return false;
