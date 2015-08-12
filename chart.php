@@ -1,6 +1,14 @@
 <?php
+//开启session
+	session_start();
 	require_once("tpl.class.php");
 	require_once("db.php");
+	@$name=$_SESSION['name'];
+	if($name=="jeffery" || $name=="pd" || $name=="ycmbcd" || $name=="max"){
+		
+	}else{
+		echo "<script>alert('你无权访问！');window.location='index.php';</script>";die;
+	}
 	//查询主题
 		$db = new DB();
 		$sql = "select * from c_theme order by id desc;";

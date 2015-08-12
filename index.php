@@ -116,6 +116,17 @@
 			}
 		}
 	}
+	//选数
+	if(isset($_GET['select_num'])){
+		$id = $_GET['select_num'];
+		$db = new DB();
+		$sql = "select c_num from c_uploads where id='{$id}';";
+		$res = $db->execute($sql);
+		foreach($res as $value);
+		$c_num = $value['c_num'];
+		echo $c_num;
+		return false;
+	}
 	//参赛
 if(isset($_POST['this_theme'])){
 if($name==""){

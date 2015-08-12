@@ -15,6 +15,7 @@ if(localStorage.lastname==undefined){
 	localStorage.lastname='1';
 }
 $(document).ready(function(){
+	$(".piao").html("*");
 	var ss =$("#middle").find(".moimg").attr("src");
 	if(ss=="/uploads/"){
 		$("#middle").hide();
@@ -87,11 +88,8 @@ function add_num(e){
 			data:"add_num="+e,
 			success:function(data){
 				if(data=="ok"){
-					var ss=$("#piao_"+e).html();
-					ss=ss-0;
-					ss=ss+1;
-					$("#piao_"+e).html(ss);
 					$(".id_"+e).css({background:"url(../images/no_ding.png)"});
+					select_num(e);
 				}else if(data=="hasding"){
 					alert("你已经投过票了！");
 				}else if(data=="nopiao"){
@@ -100,6 +98,16 @@ function add_num(e){
 					alert("请登录！");
 				}    
             } 
+	})
+}
+function select_num(e){
+	$.ajax({
+		type:"GET",
+		url:"index.php",
+		data:"select_num="+e,
+		success:function(data){
+			$("#piao_"+e).html(data); 
+		} 
 	})
 }
 function u_login(){
@@ -229,8 +237,8 @@ function picready(){
 		<div id="up" class="right" style="margin-top:10px;margin-right:10px;cursor:pointer;"><img src="/images/up.png" /></div>
         <div id="shouye" class="right" style="margin-top:10px;margin-right:10px;cursor:pointer;"><img onClick="window.location.href='/index.php';" src="/images/back.png" /></div>
         <div id="login" class="right" style="margin-top:10px;margin-right:10px;cursor:pointer;"><img onClick="u_login()" src="/images/log.png" /></div>
-        <div id="regist" class="right" style="margin-top:10px;margin-right:10px;cursor:pointer;"><img onClick="u_reg()" src="/images/reg.png" /></div
-        ><div class="clear"></div>
+        <div id="regist" class="right" style="margin-top:10px;margin-right:10px;cursor:pointer;"><img onClick="u_reg()" src="/images/reg.png" /></div>
+        <div class="clear"></div>
 	</div>
 	<div class="auto w1300" style="margin-top:200px;" id="middle">
     {foreach $pic_cool as $se}
@@ -239,7 +247,7 @@ function picready(){
 				<span></span><img class="moimg" src="/uploads/{$se.c_pic}" />
 			</div>
             <div style="font-size:14px; margin-top:10px; color:#FFF;">参赛者：{$se.c_who}</div>
-            <div class="piao" id="piao_{$se.id}">{$se.c_num}</div>
+            <div class="piao" id="piao_{$se.id}"></div>
 			<div class="ding id_{$se.id}" id="id_{$se.id}" onClick="add_num('{$se.id}')"></div><!--顶一下-->
 		</div>
 	{/foreach}	
