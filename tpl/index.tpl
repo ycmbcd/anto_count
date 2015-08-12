@@ -203,7 +203,7 @@ function picready(){
 <div id="u_login" style="z-index:10000; display:none;position:fixed;width:300px;height:150px;top:40%;left:50%; margin-left:-150px; background:#dedede;">
 	<div style="width:280px;margin:20px 0 0 50px;" class="auto">
         <div>用户名：<input type="text" class="ttt" id="u_name" /></div>
-        <div class="m10">密&nbsp;码：<input type="text" class="ttt" id="u_pwd" /></div>
+        <div class="m10">密&nbsp;码：<input type="password" class="ttt" id="u_pwd" /></div>
     </div>
         <div onClick="login_anto()" style="margin-top:20px;margin-left:50px;" class="btn_green left">登 陆</div>
         <div onClick="cancel_log()" style="margin-left:30px;margin-top:20px;" class="btn_red left">取 消</div>
@@ -213,8 +213,8 @@ function picready(){
 <div id="u_reg" style="z-index:10000; display:none;position:fixed;width:300px;height:190px;top:40%;left:50%; margin-left:-150px; background:#dedede;">
 	<div style="width:280px;margin:20px 0 0 50px;" class="auto">
         <div>用户名：<input class="ttt" type="text" id="re_u_name" /></div>
-        <div class="m10">密&nbsp;码：<input class="ttt" type="text" id="re_u_pwd" /></div>
-        <div class="m10">重&nbsp;复：<input class="ttt" type="text" id="re_re_pwd" /></div>
+        <div class="m10">密&nbsp;码：<input class="ttt" type="password" id="re_u_pwd" /></div>
+        <div class="m10">重&nbsp;复：<input class="ttt" type="password" id="re_re_pwd" /></div>
     </div>
         <div onClick="join_anto()" style="margin-top:20px;margin-left:50px;" class="btn_green left">注 册</div>
         <div onClick="cancel_reg()" style="margin-left:30px;margin-top:20px;" class="btn_red left">取 消</div>

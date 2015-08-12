@@ -4,7 +4,7 @@
 	require_once("tpl.class.php");
 	require_once("db.php");
 	@$name=$_SESSION['name'];
-	if($name=="jeffery" || $name=="pd" || $name=="ycmbcd" || $name=="max"){
+	if($name=="jeffery" || $name=="pd" || $name=="ycmbcd" || $name=="MAX"){
 		
 	}else{
 		echo "<script>alert('你无权访问！');window.location='index.php';</script>";die;
