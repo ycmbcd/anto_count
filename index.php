@@ -136,6 +136,7 @@ if($name==""){
 			return false;
 }else{
 		$this_theme = $_POST['this_theme'];
+		$c_url = $_POST['c_url'];
 //生成图片名
 	$rans = rand("100","999");
 	$now=time();
@@ -152,7 +153,7 @@ if($name==""){
      	move_uploaded_file($_FILES['uimg']['tmp_name'], "./uploads/".$pic_name.".".$extName);//移动文件到指定文件夹uploads；
     	$pic_name=$pic_name.".".$extName;
     	$db = new DB();
-		$sql = "insert into c_uploads (c_pic,c_num,c_theme,c_who) values ('{$pic_name}','0','{$this_theme}','{$name}');";
+		$sql = "insert into c_uploads (c_pic,c_num,c_theme,c_who,c_url) values ('{$pic_name}','0','{$this_theme}','{$name}','{$c_url}');";
 		$res = $db->execute($sql);
     	echo "<script>alert('上传成功，请刷新！');history.go(-1);</script>";
    }  
