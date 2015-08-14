@@ -241,7 +241,7 @@ function picready(){
         <div id="regist" class="right" style="margin-top:10px;margin-right:10px;cursor:pointer;"><img onClick="u_reg()" src="/images/reg.png" /></div>
         <div class="clear"></div>
 	</div>
-	<div class="auto w1300" style="margin-top:200px;" id="middle">
+	<div class="auto w1300" style="margin-top:140px;margin-bottom:200px" id="middle">
     {foreach $pic_cool as $se}
 		<div class="pic_box" onlyclick="0">
 			<div class="hidden">
@@ -253,6 +253,9 @@ function picready(){
 			<div class="ding id_{$se.id}" id="id_{$se.id}" onClick="add_num('{$se.id}')"></div><!--顶一下-->
 		</div>
 	{/foreach}	
+    <div class="clear"></div>
+    <div style="height:200px;"></div>
+    <div class="clear"></div>
 	</div>
 </body>
 </html>

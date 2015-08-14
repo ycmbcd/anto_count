@@ -25,13 +25,28 @@ function change_chart(){
             } 
 	})
 }
+function all_piao(){
+	var ss=$("#c_theme").val();
+	$.ajax({
+			type:"GET",
+			url:"chart.php",
+			data:"all_piao="+ss,
+			success:function(data){
+				if(data){
+					$("#all_piao").html(data);
+				}else{
+					alert("错误！");
+				}    
+            } 
+	})
+}
 </script>
 {/literal}
 </head>
 <body style="background:#dedede;height:1000px; position:relative;">
 <div class="auto w1300" id="top">
     <div class="auto w1300">
-     <select id="c_theme" onChange="change_chart()" style="width:196px;">
+     <select id="c_theme" onChange="change_chart(),all_piao()" style="width:196px;">
      <option value="0">请选择投票主题...</option> 
         {foreach $resu as $se}
         <option value="{$se.theme}">{$se.theme}</option>
@@ -41,8 +56,9 @@ function change_chart(){
         <div class="clear"></div>
 </div>
 </div>
+<div class="w1300 auto" style="margin-top:140px;font-size:16px;">总票数：<span id="all_piao">*</span></div>
 <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-    <div id="main" style="position:relative;height:400px;margin-top:240px;"></div>
+    <div id="main" style="position:relative;height:400px;margin-top:40px;"></div>
 {literal}
     <script src="/js/echarts-all.js"></script>
     <script type="text/javascript">
