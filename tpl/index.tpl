@@ -33,7 +33,12 @@ $(document).ready(function(){
 		$("#shade").fadeOut(0);
 	})
 	pic_big();
-	picready()
+	picready();
+	//上传者隐藏
+	var key_theme=$("#key_theme").html();
+	if(key_theme.indexOf("【隐】") > 0 ){
+    	$(".up_who").hide();
+	}
 })
 
 function cancel(){
@@ -248,7 +253,7 @@ function picready(){
 				<span></span><img class="moimg" src="/uploads/{$se.c_pic}" />
 			</div>
 			<div style="margin-top:10px;"><a href="{$se.c_url|default:"#"}" target="_blank" style="color:#CF0;">查看详情</a></div>
-            <div style="font-size:14px; margin-top:10px; color:#FFF;">上传者：{$se.c_who}</div>
+            <div class="up_who" style="font-size:14px; margin-top:10px; color:#FFF;">上传者：{$se.c_who}</div>
             <div class="piao" id="piao_{$se.id}"></div>
 			<div class="ding id_{$se.id}" id="id_{$se.id}" onClick="add_num('{$se.id}')"></div><!--顶一下-->
 		</div>
